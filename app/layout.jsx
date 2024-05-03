@@ -13,13 +13,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="bg-black flex items-center justify-center gap-10 p-5 border-b-2 border-red-600">
+        <nav className="flex items-center justify-center gap-10 border-b-2 border-red-600 bg-black p-5">
           <div className="flex flex-col items-center">
             <h1 className="font-dndTitle text-4xl text-red-600">Dungeons</h1>
             <h1 className="font-dndTitle text-4xl text-red-600">&</h1>
             <h1 className="font-dndTitle text-4xl text-red-600">Dragons</h1>
           </div>
-          <Image 
+          <Image
             src="/appLogoMini.png"
             alt="DND Companion App logo"
             width={125}
@@ -28,7 +28,8 @@ export default function RootLayout({ children }) {
           />
           <h1 className="font-dndTitle text-4xl text-white">Companion</h1>
         </nav>
-        {children}</body>
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,11 +1,23 @@
 {
-      // Always open css files in Tailwind CSS mode, which fixes unknown tailwind @rules warning.
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
-
-  // Improves tailwind autocomplete experience.
-  "editor.quickSuggestions": {
-    "strings": "on"
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "eslint.validate": ["javascript"],
+  
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+  
+    // Always open css files in Tailwind CSS mode, which fixes unknown tailwind @rules warning.
+    "files.associations": {
+      "*.css": "tailwindcss"
+    },
+  
+    // Improves tailwind autocomplete experience.
+    "editor.quickSuggestions": {
+      "strings": "on"
+    }
   }
-}
+  

@@ -14,7 +14,12 @@ module.exports = {
       },
       fontFamily: {
         dndTitle: ["dndTitle", "sans-serif"],
-      }
+      },
+      colors: {
+        gray: {
+          dark: "#1f2022",
+        },
+      },
     },
   },
   plugins: [],

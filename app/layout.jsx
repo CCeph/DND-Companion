@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="flex items-center justify-center gap-10 border-b-2 border-red-600 bg-black p-5">
+        <nav className="flex items-center justify-center gap-10 border-b-2 border-red-600 bg-black p-3">
           <div className="flex flex-col items-center">
             <h1 className="font-dndTitle text-4xl text-red-600">Dungeons</h1>
             <h1 className="font-dndTitle text-4xl text-red-600">&</h1>

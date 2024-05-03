@@ -1,0 +1,11 @@
+{
+      // Always open css files in Tailwind CSS mode, which fixes unknown tailwind @rules warning.
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+
+  // Improves tailwind autocomplete experience.
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
+}

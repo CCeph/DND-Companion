@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="bg-black flex items-center justify-center gap-10 p-5">
+        <nav className="bg-black flex items-center justify-center gap-10 p-5 border-b-2 border-red-600">
           <div className="flex flex-col items-center">
             <h1 className="font-dndTitle text-4xl text-red-600">Dungeons</h1>
             <h1 className="font-dndTitle text-4xl text-red-600">&</h1>
@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
             alt="DND Companion App logo"
             width={125}
             height={125}
+            unoptimized={true}
           />
           <h1 className="font-dndTitle text-4xl text-white">Companion</h1>
         </nav>

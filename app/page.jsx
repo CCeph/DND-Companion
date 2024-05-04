@@ -8,12 +8,18 @@ export default function Home() {
         <ToolCard
           toolName={"NPC Generator"}
           imageLink={"/npc-merchants.jpeg"}
+          link={"/npc-generator"}
         />
-        <ToolCard toolName={"Quest Generator"} imageLink={"/dragon.png"} />
+        <ToolCard
+          toolName={"Quest Generator"}
+          imageLink={"/dragon.png"}
+          link={"/quest-generator"}
+        />
         <ToolCard
           toolName={"Story Generator"}
           imageLink={"/story.png"}
           odd={true}
+          link={"/story-generator"}
         />
       </div>
       {/* If there is an odd number of items, place the last one in the flex div below */}

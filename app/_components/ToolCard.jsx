@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-export default function ToolCard({ toolName }) {
+export default function ToolCard({ toolName, imageLink }) {
   return (
     <div className="relative overflow-hidden rounded-lg text-gray-300 hover:text-white">
       <Image
-        className="transition-transform duration-300 hover:scale-110"
-        src="/npc-merchants.jpeg"
+        className="object-cover transition-transform duration-300 hover:scale-110"
+        src={imageLink}
         alt="DND Companion App logo"
         width={350}
         height={350}

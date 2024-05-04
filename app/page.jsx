@@ -5,8 +5,11 @@ export default function Home() {
   return (
     <div className="flex flex-1 items-center justify-center">
       <div className="grid grid-cols-2 gap-16">
-        <ToolCard toolName={"NPC Generator"} />
-        <ToolCard toolName={"Quest Generator"} />
+        <ToolCard
+          toolName={"NPC Generator"}
+          imageLink={"/npc-merchants.jpeg"}
+        />
+        <ToolCard toolName={"Quest Generator"} imageLink={"/dragon.png"} />
         <ToolCard toolName={"Encounter Generator"} />
         <ToolCard toolName={"Story Generator"} />
       </div>

@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
             <h1 className="font-dndTitle text-4xl text-white">Companion</h1>
           </Link>
         </nav>
-        <nav className="bg-gray-dark flex justify-around">
+        <nav className="flex justify-around bg-gray-dark">
           <Link
             className="flex flex-1 justify-center text-gray-300 hover:bg-black"
             href="/npc-generator"

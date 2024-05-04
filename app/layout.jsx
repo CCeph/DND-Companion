@@ -46,12 +46,6 @@ export default function RootLayout({ children }) {
           </Link>
           <Link
             className="flex flex-1 justify-center text-gray-300 hover:bg-black"
-            href="/encounter-generator"
-          >
-            Encounter Generator
-          </Link>
-          <Link
-            className="flex flex-1 justify-center text-gray-300 hover:bg-black"
             href="/story-generator"
           >
             Story Generator

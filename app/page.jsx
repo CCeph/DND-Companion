@@ -3,7 +3,7 @@ import ToolCard from "./_components/ToolCard";
 
 export default function Home() {
   return (
-    <div className="flex flex-1 items-center justify-center">
+    <div className="m-5 flex flex-1 items-center justify-center">
       <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
         <ToolCard
           toolName={"NPC Generator"}

@@ -1,8 +1,13 @@
 import Image from "next/image";
 
-export default function ToolCard({ toolName, imageLink }) {
+export default function ToolCard({ toolName, imageLink, odd }) {
   return (
-    <div className="relative overflow-hidden rounded-lg text-gray-300 hover:text-white">
+    <div
+      className={
+        "relative overflow-hidden rounded-lg text-gray-300 hover:text-white " +
+        (odd && " lg:col-start-1 lg:col-end-3 lg:justify-self-center ")
+      }
+    >
       <Image
         className="object-cover transition-transform duration-300 hover:scale-110"
         src={imageLink}

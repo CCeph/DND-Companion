@@ -1,3 +1,7 @@
+import OpenAI from "openai";
+
+const openai = new OpenAI();
+
 export default function NPCForm() {
   async function generateNPC(formData) {
     "use server";
@@ -10,6 +14,25 @@ export default function NPCForm() {
     };
 
     console.log(rawFormData);
+
+    const completion = await openai.chat.completions.create({
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a DND Dungeon Master. You will be given some information by the user about a NPC You need to generate a name (max 50 words), background (max 150 words), and personality (max 100 words) for the NPC.",
+        },
+        {
+          role: "user",
+          content:
+            "The NPC's race is Human. Their occupation is Merchant. Their class is Druid. Other details about this NPC are: short.",
+        },
+      ],
+      model: "gpt-3.5-turbo",
+    });
+    console.log(completion);
+    console.log(completion.choices[0]);
+    console.log(completion.choices[0].message.content);
   }
 
   return (

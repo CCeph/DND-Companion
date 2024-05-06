@@ -67,6 +67,11 @@ export default function NPCForm() {
         <h1 className="place-self-center text-4xl font-semibold">
           NPC Generator
         </h1>
+        <p className="mt-3 place-self-center text-lg">
+          Filling in any of the fields below will result in the NPC generated
+          having those attributes. All fields are optional. If you would like a
+          completely random NPC, just click &quot;Generate&quot;!
+        </p>
         <div className="m-5 flex flex-1 flex-col">
           <label htmlFor="race">NPC Race</label>
           <input

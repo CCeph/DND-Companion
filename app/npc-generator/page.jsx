@@ -42,13 +42,18 @@ export default function NPCForm() {
           NPC Generator
         </h1>
         <div className="m-5 flex flex-1 flex-col">
-          <label htmlFor="race">
-            NPC Race <span className="text-red-600">*</span>
-          </label>
+          <label htmlFor="race">NPC Race</label>
           <input
             type="text"
             id="race"
             name="race"
+            className="my-2 rounded-sm border-2 p-2"
+          />
+          <label htmlFor="gender">Gender</label>
+          <input
+            type="text"
+            name="gender"
+            id="gender"
             className="my-2 rounded-sm border-2 p-2"
           />
           <label htmlFor="occupation">Occupation</label>

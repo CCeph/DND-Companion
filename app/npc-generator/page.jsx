@@ -28,21 +28,21 @@ export default function NPCForm() {
             name="race"
             className="my-2 rounded-sm border-2 p-2"
           />
-          <label htmlFor="occupation">Occupation:</label>
+          <label htmlFor="occupation">Occupation</label>
           <input
             type="text"
             name="occupation"
             id="occupation"
             className="my-2 rounded-sm border-2 p-2"
           />
-          <label htmlFor="class">Class:</label>
+          <label htmlFor="class">Class</label>
           <input
             type="text"
             name="class"
             id="class"
             className="my-2 rounded-sm border-2 p-2"
           />
-          <label htmlFor="otherDetails">Other Details:</label>
+          <label htmlFor="otherDetails">Other Details</label>
           <textarea
             name="otherDetails"
             id="otherDetails"

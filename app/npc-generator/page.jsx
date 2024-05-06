@@ -8,6 +8,7 @@ export default function NPCForm() {
 
     const rawFormData = {
       race: formData.get("race"),
+      gender: formData.get("gender"),
       occupation: formData.get("occupation"),
       class: formData.get("class"),
       otherDetails: formData.get("otherDetails"),

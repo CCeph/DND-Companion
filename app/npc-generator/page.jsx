@@ -7,6 +7,7 @@ const initialState = "No NPC generated";
 
 export default function NPCForm() {
   const [state, formAction] = useFormState(generateNPC, initialState);
+  const userPromptArray = state.split("\n").filter((element) => element !== "");
   return (
     <main className="flex flex-1 flex-col items-center">
       <form action={formAction} className="m-5 flex max-w-2xl flex-1 flex-col">
@@ -63,7 +64,9 @@ export default function NPCForm() {
       </form>
       <div>
         <h1>Generated NPC</h1>
-        {state}
+        {userPromptArray.map((paragraph, index) => {
+          return <p key={index}>{paragraph}</p>;
+        })}
       </div>
     </main>
   );

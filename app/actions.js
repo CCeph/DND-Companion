@@ -38,10 +38,7 @@ export async function generateNPC(prevState, formData) {
     otherDetails: formData.get("otherDetails"),
   };
 
-  console.log(rawFormData);
   const userPrompt = generateUserPrompt(rawFormData);
-
-  console.log(userPrompt);
 
   const completion = await openai.chat.completions.create({
     messages: [
@@ -57,8 +54,5 @@ export async function generateNPC(prevState, formData) {
     ],
     model: "gpt-3.5-turbo",
   });
-  console.log(completion);
-  console.log(completion.choices[0]);
-  console.log(completion.choices[0].message.content);
   return completion.choices[0].message.content;
 }

@@ -1,9 +1,15 @@
 "use client";
 
+import { useFormState } from "react-dom";
+import { generateNPC } from "../actions";
+
+const initialState = "No NPC generated";
+
 export default function NPCForm() {
+  const [state, formAction] = useFormState(generateNPC, initialState);
   return (
-    <main className="flex flex-1 justify-center">
-      <form action={generateNPC} className="m-5 flex max-w-2xl flex-1 flex-col">
+    <main className="flex flex-1 flex-col items-center">
+      <form action={formAction} className="m-5 flex max-w-2xl flex-1 flex-col">
         <h1 className="place-self-center text-4xl font-semibold">
           NPC Generator
         </h1>
@@ -55,6 +61,10 @@ export default function NPCForm() {
           </button>
         </div>
       </form>
+      <div>
+        <h1>Generated NPC</h1>
+        {state}
+      </div>
     </main>
   );
 }

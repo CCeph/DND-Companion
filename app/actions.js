@@ -27,7 +27,7 @@ function generateUserPrompt(rawFormData) {
   return userPrompt;
 }
 
-async function generateNPC(formData) {
+export async function generateNPC(prevState, formData) {
   "use server";
 
   const rawFormData = {
@@ -43,22 +43,22 @@ async function generateNPC(formData) {
 
   console.log(userPrompt);
 
-  /* const completion = await openai.chat.completions.create({
-      messages: [
-        {
-          role: "system",
-          content:
-            "You are a DND Dungeon Master. You will be given some information by the user about a NPC You need to generate a name (max 50 words), background (max 150 words), and personality (max 100 words) for the NPC.",
-        },
-        {
-          role: "user",
-          content: userPrompt,
-        },
-      ],
-      model: "gpt-3.5-turbo",
-    });
-    console.log(completion);
-    console.log(completion.choices[0]);
-    console.log(completion.choices[0].message.content); */
-  return "User Prompt goes here";
+  const completion = await openai.chat.completions.create({
+    messages: [
+      {
+        role: "system",
+        content:
+          "You are a DND Dungeon Master. You will be given some information by the user about a NPC You need to generate a name (max 50 words), background (max 150 words), and personality (max 100 words) for the NPC.",
+      },
+      {
+        role: "user",
+        content: userPrompt,
+      },
+    ],
+    model: "gpt-3.5-turbo",
+  });
+  console.log(completion);
+  console.log(completion.choices[0]);
+  console.log(completion.choices[0].message.content);
+  return completion.choices[0].message.content;
 }

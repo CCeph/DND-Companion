@@ -30,8 +30,8 @@ export default function NPCForm() {
             otherDetails: "",
           }}
           validationSchema={Yup.object({
-            race: Yup.string().max(25, "Must be 25 characters or less"),
-            gender: Yup.string().max(25, "Must be 25 characters or less"),
+            race: Yup.string().max(40, "Must be 40 characters or less"),
+            gender: Yup.string().max(40, "Must be 40 characters or less"),
             occupation: Yup.string().max(50, "Must be 50 characters or less"),
             class: Yup.string().max(50, "Must be 50 characters or less"),
             otherDetails: Yup.string().max(

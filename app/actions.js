@@ -30,6 +30,17 @@ function generateUserPrompt(rawFormData) {
 export async function generateNPC(prevState, formData) {
   "use server";
 
+  //Validation
+  if (
+    formData.race.length > 40 ||
+    formData.gender.length > 40 ||
+    formData.occupation.length > 50 ||
+    formData.class.length > 50 ||
+    formData.otherDetails.length > 50
+  ) {
+    return "An error occured. Please check your inputs and try again.";
+  }
+
   const userPrompt = generateUserPrompt(formData);
 
   const completion = await openai.chat.completions.create({

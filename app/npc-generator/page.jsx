@@ -47,50 +47,59 @@ export default function NPCForm() {
               name="race"
               type="text"
               className="my-2 rounded-sm border-2 p-2"
+              autocomplete="off"
             ></Field>
             <ErrorMessage
               name="race"
               component={"div"}
               className="mb-4 text-red-600"
             ></ErrorMessage>
+
             <label htmlFor="gender">Gender</label>
             <Field
               type="text"
               name="gender"
               className="my-2 rounded-sm border-2 p-2"
+              autocomplete="off"
             />
             <ErrorMessage
               name="gender"
               component={"div"}
               className="mb-4 text-red-600"
             ></ErrorMessage>
+
             <label htmlFor="occupation">Occupation</label>
             <Field
               type="text"
               name="occupation"
               className="my-2 rounded-sm border-2 p-2"
+              autocomplete="off"
             />
             <ErrorMessage
               name="occupation"
               component={"div"}
               className="mb-4 text-red-600"
             ></ErrorMessage>
+
             <label htmlFor="class">Class</label>
             <Field
               type="text"
               name="class"
               className="my-2 rounded-sm border-2 p-2"
+              autocomplete="off"
             />
             <ErrorMessage
               name="class"
               component={"div"}
               className="mb-4 text-red-600"
             ></ErrorMessage>
+
             <label htmlFor="otherDetails">Other Details</label>
             <Field
               name="otherDetails"
               className="my-2 rounded-sm border-2 p-2"
               as="textarea"
+              autocomplete="off"
             ></Field>
             <ErrorMessage
               name="otherDetails"

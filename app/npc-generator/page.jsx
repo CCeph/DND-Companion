@@ -62,11 +62,15 @@ export default function NPCForm() {
           </button>
         </div>
       </form>
-      <div>
-        <h1>Generated NPC</h1>
-        {userPromptArray.map((paragraph, index) => {
-          return <p key={index}>{paragraph}</p>;
-        })}
+      <div className="m-5 flex max-w-2xl flex-1 flex-col rounded-xl border border-gray-400 p-5">
+        <h2 className="mb-6 text-center text-3xl">Generated NPC</h2>
+        {userPromptArray[0] === initialState ? (
+          <p className="text-center">Your generated NPC will appear here.</p>
+        ) : (
+          userPromptArray.map((paragraph, index) => {
+            return <p key={index}>{paragraph}</p>;
+          })
+        )}
       </div>
     </main>
   );

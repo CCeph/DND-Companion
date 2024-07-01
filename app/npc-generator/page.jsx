@@ -30,11 +30,14 @@ export default function NPCForm() {
             otherDetails: "",
           }}
           validationSchema={Yup.object({
-            race: Yup.string().max(50, "Must be 50 characters or less"),
-            gender: Yup.string(),
-            occupation: Yup.string(),
-            class: Yup.string(),
-            otherDetails: Yup.string(),
+            race: Yup.string().max(25, "Must be 25 characters or less"),
+            gender: Yup.string().max(25, "Must be 25 characters or less"),
+            occupation: Yup.string().max(50, "Must be 50 characters or less"),
+            class: Yup.string().max(50, "Must be 50 characters or less"),
+            otherDetails: Yup.string().max(
+              150,
+              "Must be 150 characters or less",
+            ),
           })}
           onSubmit={formAction}
         >
@@ -45,31 +48,55 @@ export default function NPCForm() {
               type="text"
               className="my-2 rounded-sm border-2 p-2"
             ></Field>
-            <ErrorMessage name="race"></ErrorMessage>
+            <ErrorMessage
+              name="race"
+              component={"div"}
+              className="mb-4 text-red-600"
+            ></ErrorMessage>
             <label htmlFor="gender">Gender</label>
             <Field
               type="text"
               name="gender"
               className="my-2 rounded-sm border-2 p-2"
             />
+            <ErrorMessage
+              name="gender"
+              component={"div"}
+              className="mb-4 text-red-600"
+            ></ErrorMessage>
             <label htmlFor="occupation">Occupation</label>
             <Field
               type="text"
               name="occupation"
               className="my-2 rounded-sm border-2 p-2"
             />
+            <ErrorMessage
+              name="occupation"
+              component={"div"}
+              className="mb-4 text-red-600"
+            ></ErrorMessage>
             <label htmlFor="class">Class</label>
             <Field
               type="text"
               name="class"
               className="my-2 rounded-sm border-2 p-2"
             />
+            <ErrorMessage
+              name="class"
+              component={"div"}
+              className="mb-4 text-red-600"
+            ></ErrorMessage>
             <label htmlFor="otherDetails">Other Details</label>
             <Field
               name="otherDetails"
               className="my-2 rounded-sm border-2 p-2"
               as="textarea"
             ></Field>
+            <ErrorMessage
+              name="otherDetails"
+              component={"div"}
+              className="mb-4 text-red-600"
+            ></ErrorMessage>
             <button
               type="submit"
               className="my-2 place-self-center rounded-xl border-2 bg-black p-3 text-lg text-white"

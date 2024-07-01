@@ -30,15 +30,7 @@ function generateUserPrompt(rawFormData) {
 export async function generateNPC(prevState, formData) {
   "use server";
 
-  const rawFormData = {
-    race: formData.get("race"),
-    gender: formData.get("gender"),
-    occupation: formData.get("occupation"),
-    class: formData.get("class"),
-    otherDetails: formData.get("otherDetails"),
-  };
-
-  const userPrompt = generateUserPrompt(rawFormData);
+  const userPrompt = generateUserPrompt(formData);
 
   const completion = await openai.chat.completions.create({
     messages: [

@@ -47,7 +47,7 @@ export default function NPCForm() {
               name="race"
               type="text"
               className="my-2 rounded-sm border-2 p-2"
-              autocomplete="off"
+              autoComplete="off"
             ></Field>
             <ErrorMessage
               name="race"
@@ -60,7 +60,7 @@ export default function NPCForm() {
               type="text"
               name="gender"
               className="my-2 rounded-sm border-2 p-2"
-              autocomplete="off"
+              autoComplete="off"
             />
             <ErrorMessage
               name="gender"
@@ -73,7 +73,7 @@ export default function NPCForm() {
               type="text"
               name="occupation"
               className="my-2 rounded-sm border-2 p-2"
-              autocomplete="off"
+              autoComplete="off"
             />
             <ErrorMessage
               name="occupation"
@@ -86,7 +86,7 @@ export default function NPCForm() {
               type="text"
               name="class"
               className="my-2 rounded-sm border-2 p-2"
-              autocomplete="off"
+              autoComplete="off"
             />
             <ErrorMessage
               name="class"
@@ -99,7 +99,7 @@ export default function NPCForm() {
               name="otherDetails"
               className="my-2 rounded-sm border-2 p-2"
               as="textarea"
-              autocomplete="off"
+              autoComplete="off"
             ></Field>
             <ErrorMessage
               name="otherDetails"

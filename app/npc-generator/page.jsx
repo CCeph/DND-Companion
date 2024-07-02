@@ -6,11 +6,16 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import StatBlock from "../_components/StatBlock";
 
-const initialState = "No NPC generated";
+const initialState = {
+  statBlock: "",
+  response: "No NPC generated",
+};
 
 export default function NPCForm() {
   const [state, formAction] = useFormState(generateNPC, initialState);
-  const userPromptArray = state.split("\n").filter((element) => element !== "");
+  const userPromptArray = state.response
+    .split("\n")
+    .filter((element) => element !== "");
   return (
     <main className="flex flex-1 flex-col items-center">
       <div className="m-5 flex max-w-2xl flex-col">
@@ -28,6 +33,7 @@ export default function NPCForm() {
             gender: "",
             occupation: "",
             class: "",
+            statBlock: "commoner",
             otherDetails: "",
           }}
           validationSchema={Yup.object({
@@ -95,6 +101,15 @@ export default function NPCForm() {
               className="mb-4 text-red-600"
             ></ErrorMessage>
 
+            <label htmlFor="statBlock">Stat Block</label>
+            <Field
+              as="select"
+              name="statBlock"
+              className="my-2 rounded-sm border-2 p-2"
+            >
+              <option value="commoner">Commoner</option>
+            </Field>
+
             <label htmlFor="otherDetails">Other Details</label>
             <Field
               name="otherDetails"
@@ -120,14 +135,16 @@ export default function NPCForm() {
       <div className="m-5 mb-20 max-w-2xl rounded-xl border border-gray-400 p-8">
         <h2 className="mb-5 text-center text-3xl">Generated NPC</h2>
         <hr className="mb-5" />
-        {userPromptArray[0] === initialState ? (
+        {state === initialState ? (
           <p className="text-center">Your generated NPC will appear here.</p>
         ) : (
           userPromptArray.map((paragraph, index) => {
             return <p key={index}>{paragraph}</p>;
           })
         )}
-        <StatBlock characterName={"commoner"}></StatBlock>
+        {state !== initialState && (
+          <StatBlock characterName={state.statBlock}></StatBlock>
+        )}
       </div>
     </main>
   );

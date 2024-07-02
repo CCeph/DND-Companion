@@ -57,5 +57,8 @@ export async function generateNPC(prevState, formData) {
     ],
     model: "gpt-3.5-turbo",
   });
-  return completion.choices[0].message.content;
+  return {
+    statBlock: formData.statBlock,
+    response: completion.choices[0].message.content,
+  };
 }

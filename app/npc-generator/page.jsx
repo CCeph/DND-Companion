@@ -105,9 +105,10 @@ export default function NPCForm() {
             <Field
               as="select"
               name="statBlock"
-              className="my-2 rounded-sm border-2 p-2"
+              className="my-2 rounded-sm border-2 bg-white p-2"
             >
               <option value="commoner">Commoner</option>
+              <option value="guard">Guard</option>
             </Field>
 
             <label htmlFor="otherDetails">Other Details</label>

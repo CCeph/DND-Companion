@@ -6,6 +6,9 @@ const openai = new OpenAI();
 
 function generateUserPrompt(rawFormData) {
   let userPrompt = "";
+  if (!(rawFormData.name === "")) {
+    userPrompt += `The NPC's name is: ${rawFormData.name}\n`;
+  }
   if (!(rawFormData.race === "")) {
     userPrompt += `The NPC's race is: ${rawFormData.race}\n`;
   }
@@ -32,6 +35,7 @@ export async function generateNPC(prevState, formData) {
 
   //Validation
   if (
+    formData.name.length > 50 ||
     formData.race.length > 40 ||
     formData.gender.length > 40 ||
     formData.occupation.length > 50 ||

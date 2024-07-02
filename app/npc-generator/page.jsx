@@ -29,6 +29,7 @@ export default function NPCForm() {
         </p>
         <Formik
           initialValues={{
+            name: "",
             race: "",
             gender: "",
             occupation: "",
@@ -37,6 +38,7 @@ export default function NPCForm() {
             otherDetails: "",
           }}
           validationSchema={Yup.object({
+            name: Yup.string().max(50, "Must be 50 characters or less"),
             race: Yup.string().max(40, "Must be 40 characters or less"),
             gender: Yup.string().max(40, "Must be 40 characters or less"),
             occupation: Yup.string().max(50, "Must be 50 characters or less"),
@@ -49,7 +51,20 @@ export default function NPCForm() {
           onSubmit={formAction}
         >
           <Form className="m-5 flex flex-1 flex-col">
-            <label htmlFor="race">NPC Race</label>
+            <label htmlFor="name">NPC Name (Optional)</label>
+            <Field
+              name="name"
+              type="text"
+              className="my-2 rounded-sm border-2 p-2"
+              autoComplete="off"
+            ></Field>
+            <ErrorMessage
+              name="name"
+              component={"div"}
+              className="mb-4 text-red-600"
+            ></ErrorMessage>
+
+            <label htmlFor="race">Race (Optional)</label>
             <Field
               name="race"
               type="text"
@@ -62,7 +77,7 @@ export default function NPCForm() {
               className="mb-4 text-red-600"
             ></ErrorMessage>
 
-            <label htmlFor="gender">Gender</label>
+            <label htmlFor="gender">Gender (Optional)</label>
             <Field
               type="text"
               name="gender"
@@ -75,7 +90,7 @@ export default function NPCForm() {
               className="mb-4 text-red-600"
             ></ErrorMessage>
 
-            <label htmlFor="occupation">Occupation</label>
+            <label htmlFor="occupation">Occupation (Optional)</label>
             <Field
               type="text"
               name="occupation"
@@ -88,7 +103,7 @@ export default function NPCForm() {
               className="mb-4 text-red-600"
             ></ErrorMessage>
 
-            <label htmlFor="class">Class</label>
+            <label htmlFor="class">Class (Optional)</label>
             <Field
               type="text"
               name="class"
@@ -113,7 +128,7 @@ export default function NPCForm() {
               <option value="banditCaptain">Bandit Captain</option>
             </Field>
 
-            <label htmlFor="otherDetails">Other Details</label>
+            <label htmlFor="otherDetails">Other Details (Optional)</label>
             <Field
               name="otherDetails"
               className="my-2 rounded-sm border-2 p-2"

@@ -73,6 +73,93 @@ export default function StatBlock({ characterName }) {
       };
       break;
 
+    case "bandit":
+      characterInfo = {
+        name: "Bandit",
+        size: "Medium",
+        type: "Humanoid",
+        race: "(Any Race)",
+        alignment: "Any Non-Lawful Alignment",
+        armorClass: "12 (Leather Armor)",
+        hitPoints: "11 (2d8+2)",
+        speed: "30 ft",
+        strength: "11 (0)",
+        dexterity: "12 (+1)",
+        constitution: "12 (+1)",
+        intelligence: "10 (+0)",
+        wisdom: "10 (+0)",
+        charisma: "10 (+0)",
+        senses: "Passive Perception 10",
+        languages: "Any one language (usually Common)",
+        challenge: "1/8 (25 XP)",
+        actions: [
+          {
+            name: "Scimitar.",
+            description:
+              "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d6 + 1) slashing damage.",
+          },
+          {
+            name: "Light Crossbow.",
+            description:
+              "Ranged Weapon Attack: +3 to hit, reach 80/320 ft., one target. Hit: (1d8 + 1) piercing damage.",
+          },
+        ],
+      };
+      break;
+
+    case "banditCaptain":
+      characterInfo = {
+        name: "Bandit Captain",
+        size: "Medium",
+        type: "Humanoid",
+        race: "(Any Race)",
+        alignment: "Any Non-Lawful Alignment",
+        armorClass: "15 (Studded Armor)",
+        hitPoints: "65 (10d8+20)",
+        speed: "30 ft",
+        strength: "15 (+2)",
+        dexterity: "16 (+3)",
+        constitution: "14 (+2)",
+        intelligence: "14 (+2)",
+        wisdom: "11 (+0)",
+        charisma: "14 (+2)",
+        savingThrows: "Str +4, Dex +5, Wis +2",
+        skills: "Athletics +4, Deception +4",
+        senses: "Passive Perception 10",
+        languages: "Any two languages",
+        challenge: "2 (450 XP)",
+        actions: [
+          {
+            name: "Multiattack.",
+            description:
+              "The captain makes three melee attacks: two with its scimitar and one with its dagger. Or the captain makes two ranged attacks with its daggers.",
+          },
+          {
+            name: "Scimitar",
+            description:
+              "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: (1d6 + 3) slashing damage.",
+          },
+          {
+            name: "Dagger.",
+            description:
+              "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: (1d4 + 3) piercing damage.",
+          },
+          {
+            name: "Dagger.",
+            description:
+              "Ranged Weapon Attack: +5 to hit, reach 20/60 ft., one target. Hit: (1d4 + 3) piercing damage.",
+          },
+        ],
+        reactions: [
+          {
+            name: "Parry.",
+            description:
+              "The captain adds 2 to its AC against one melee attack that would hit it. To do so, the captain must see the attacker and be wielding a melee weapon.",
+          },
+        ],
+      };
+      break;
+
     default:
       break;
   }
@@ -156,9 +243,6 @@ export default function StatBlock({ characterName }) {
         </svg>
         <h3 className="mt-8 text-2xl text-red-800">Actions</h3>
         <hr className="h-1 bg-red-800 opacity-80" />
-        {/*           userPromptArray.map((paragraph, index) => {
-            return <p key={index}>{paragraph}</p>;
-          }) */}
         {characterInfo.actions.map((action, index) => {
           return (
             <div key={index}>
@@ -169,6 +253,24 @@ export default function StatBlock({ characterName }) {
             </div>
           );
         })}
+        {characterInfo.reactions && (
+          <div>
+            <h3 className="mt-8 text-2xl text-red-800">Reactions</h3>
+            <hr className="h-1 bg-red-800 opacity-80" />
+            {characterInfo.reactions.map((reaction, index) => {
+              return (
+                <div key={index}>
+                  <p className="pt-5 italic">
+                    <span className="font-bold text-black">
+                      {reaction.name}
+                    </span>{" "}
+                    <span className="text-black">{reaction.description}</span>
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
       <hr className="bg-statblock-bar h-2" />
     </div>

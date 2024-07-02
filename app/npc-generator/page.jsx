@@ -109,6 +109,8 @@ export default function NPCForm() {
             >
               <option value="commoner">Commoner</option>
               <option value="guard">Guard</option>
+              <option value="bandit">Bandit</option>
+              <option value="banditCaptain">Bandit Captain</option>
             </Field>
 
             <label htmlFor="otherDetails">Other Details</label>
@@ -139,12 +141,12 @@ export default function NPCForm() {
         {state === initialState ? (
           <p className="text-center">Your generated NPC will appear here.</p>
         ) : (
-          userPromptArray.map((paragraph, index) => {
-            return <p key={index}>{paragraph}</p>;
-          })
-        )}
-        {state !== initialState && (
-          <StatBlock characterName={state.statBlock}></StatBlock>
+          <div>
+            {userPromptArray.map((paragraph, index) => {
+              return <p key={index}>{paragraph}</p>;
+            })}
+            <StatBlock characterName={state.statBlock}></StatBlock>
+          </div>
         )}
       </div>
     </main>

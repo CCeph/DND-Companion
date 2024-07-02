@@ -4,6 +4,7 @@ import { useFormState } from "react-dom";
 import { generateNPC } from "../actions";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import StatBlock from "../_components/StatBlock";
 
 const initialState = "No NPC generated";
 
@@ -126,6 +127,7 @@ export default function NPCForm() {
             return <p key={index}>{paragraph}</p>;
           })
         )}
+        <StatBlock characterName={"commoner"}></StatBlock>
       </div>
     </main>
   );
